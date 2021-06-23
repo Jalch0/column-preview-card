@@ -1,0 +1,123 @@
+/* globals */ 
+
+* {
+    /* font-family: 'Lexend Deca', sans-serif; */
+    /* font-family: 'Big Shoulders Display', cursive; */
+    padding: 0;
+    margin: 0;
+}
+
+/* Colors */
+
+:root {
+    --orange: hsl(31, 77%, 52%); /* Sedans */
+    --cyan:  hsl(184, 100%, 22%); /* SUVs */
+    --darkcyan: hsl(179, 100%, 13%); /* Luxury */
+    --transparentwhite: hsla(0, 0%, 100%, 0.75); /* paragraphs */
+    --lightgray: hsl(0, 0%, 95%); /* background, headings, buttons */
+}
+
+/* Container */ 
+
+body {
+    font-size: 15px;
+    background-color: var(--lightgray);
+}
+
+.wrap {
+    display: flex;
+    flex-direction:column;
+    padding: 100px 30px;
+}
+
+/* block positioning */ 
+
+.wrap__sedans, .wrap__suvs, .wrap__luxury {
+    padding: 40px 40px;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+/* Design */
+
+img {
+    width: 5em;
+}
+
+.wrap--title {
+    text-transform:uppercase;
+    font-family: 'Big Shoulders Display', cursive;
+    color: var(--lightgray);
+    font-size: 3em;
+}
+
+.wrap--text {
+    font-family: 'Lexend Deca', sans-serif;
+    color: var(--transparentwhite);
+    line-height: 1.9;
+    margin-bottom: 1em;
+    
+}
+
+.wrap--button {
+    background-color: var(--lightgray);
+    font-family: 'Lexend Deca', sans-serif;
+    text-decoration: none;
+    padding: 15px;
+    width: 50%;
+    border-radius: 2em;
+    border: 2px solid var(--lightgray);
+    text-align: center;
+}
+
+/* Colors and buttons in each block */ 
+
+.wrap__sedans {
+    background-color: var(--orange);
+    border-radius: 15px 0px 0px 15px;
+}
+
+.wrap__sedans > a {
+    color: var(--orange);
+}
+
+.wrap__suvs {
+    background-color: var(--cyan);
+}
+
+.wrap__suvs > a {
+    color: var(--cyan);
+}
+
+.wrap__luxury {
+    background-color: var(--darkcyan);
+    border-radius: 0px 15px 15px 0px;
+}
+
+.wrap__luxury > a {
+    color: var(--darkcyan);
+}
+
+a:hover {
+    background-color: transparent;
+    color: white;
+    transition: all .5s;
+    
+}
+
+/* Responsive */ 
+
+@media screen and (min-width: 1440px){
+
+    .wrap {
+        flex-direction: row;
+        margin: 0% 15%;
+    }
+    
+    .wrap__sedans, .wrap__suvs, .wrap__luxury {
+        padding-right: 5.5em;
+    }
+
+}
